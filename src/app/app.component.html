@@ -1,0 +1,38 @@
+<div class = "container">
+  <!-- <a (click)="open()">Open Contact Slideout</a> -->
+  <div>
+    <a class="left" (click)="open()">Open Contact Sideout</a>
+  </div>
+  
+  <form [@openClose]="isOpen ? 'open': 'close'">
+    <div class = "title">
+      <h2>Contact</h2>
+      <h2 class="close" (click)="open()" [@openClose]="isOpen ? 'open': 'close'">X</h2>
+    </div>
+    
+  
+    <div class="input">
+    <label for="name">
+      Name
+      <input type="text" [formControl]="name">
+    </label>
+   
+    <label for="surname">
+      Surname
+      <input type="text" [formControl]="surname">
+    </label>
+    
+    <label for="message">
+      Message
+      <textarea name="message" cols="30" rows="10" [formControl]="message"></textarea>
+    </label>
+    </div>
+    
+    <div class="submit"><a (click)="submit()">Send</a></div>
+    
+    
+  </form>
+  </div>
+  
+  <p>{{msg}}</p>
+  
